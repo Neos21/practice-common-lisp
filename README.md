@@ -38,17 +38,25 @@ Installed implementations:
 
 Installed versions of sbcl-bin:
 sbcl-bin/2.2.8
+```
 
-# REPL
+- REPL
+
+```bash
 $ ros run
 * (format t "Hello, World")
 Hello, World
 NIL
 * (exit)
+```
 
+- Create Script
+
+```bash
 # Create Template
 $ ros init hello-world
 Successfully generated: hello-world.ros
+
 # Execute
 $ ./hello-world.ros
 

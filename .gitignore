@@ -1,3 +1,6 @@
+.DS_Store
+Thumbs.db
+
 *.FASL
 *.fasl
 *.lisp-temp
