@@ -1,0 +1,27 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp(ql:quickload '(:hello-project) :silent t)
+  ; ↑元は `'()` だった部分でパッケージをインポートする
+  ; `~/.roswell/local-projects/` 配下にプロジェクトを置くかシンボリックリンクを張らないとココが解決できず Not Found になるので注意
+  )
+
+(defpackage :ros.script.hello-project.3872814791
+  (:use :cl))
+(in-package :ros.script.hello-project.3872814791)
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  
+  ; ココにメイン処理を書く
+  (write-line "hello-project/hello-project.ros !")
+  
+  (hello-project:echo-hello-world)
+  
+  0  ; 終了ステータス
+)
+;;; vim: set ft=lisp lisp:
